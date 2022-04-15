@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  kinesis-build:
+    image: amazoncorretto:8
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes: 
+      - "$HOME:/home/docker"
+

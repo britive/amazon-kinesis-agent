@@ -1,3 +1,7 @@
+# Britive hacks
+Upgrade FasterXML, jcommander and Guava to avoid CVE scanner complaints.  Note we did not determine whether or not the vulnerabilities were exploitable,
+but just wanted reduce the noise in our CVE scan by simply upgrading the problematic components
+
 # Amazon Kinesis Agent
 
 The **Amazon Kinesis Agent** is a stand-alone Java software application that offers an easier way to collect and ingest data into [Amazon Kinesis][kinesis] services, including [Amazon Kinesis Streams][kinesis-stream] and [Amazon Kinesis Firehose][kinesis-firehose].

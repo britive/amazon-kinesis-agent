@@ -24,6 +24,7 @@
 
     <properties>
         <aws-java-sdk.version>1.11.700</aws-java-sdk.version>
+        <fasterxml.version>2.13.2</fasterxml.version>
     </properties>
 
     <dependencies>
@@ -65,27 +66,27 @@
         <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
           <artifactId>jackson-annotations</artifactId>
-          <version>2.10.3</version>
+          <version>${fasterxml.version}</version>
         </dependency>
         <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
           <artifactId>jackson-core</artifactId>
-          <version>2.10.3</version>
+          <version>${fasterxml.version}</version>
         </dependency>
         <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
           <artifactId>jackson-databind</artifactId>
-          <version>[2.10.5.1,)</version>
+          <version>${fasterxml.version}.2</version>
         </dependency>
         <dependency>
           <groupId>com.fasterxml.jackson.dataformat</groupId>
           <artifactId>jackson-dataformat-cbor</artifactId>
-          <version>2.10.3</version>
+          <version>${fasterxml.version}</version>
         </dependency>
         <dependency>
           <groupId>com.fasterxml.jackson.dataformat</groupId>
           <artifactId>jackson-dataformat-xml</artifactId>
-          <version>2.10.3</version>
+          <version>${fasterxml.version}</version>
         </dependency>
         <dependency>
           <groupId>com.google.code.findbugs</groupId>
@@ -95,7 +96,7 @@
         <dependency>
           <groupId>com.google.guava</groupId>
           <artifactId>guava</artifactId>
-          <version>29.0-jre</version>
+          <version>31.1-jre</version>
         </dependency>
         <dependency>
           <groupId>org.apache.httpcomponents</groupId>
@@ -182,7 +183,7 @@
         <dependency>
           <groupId>com.beust</groupId>
           <artifactId>jcommander</artifactId>
-          <version>1.48</version>
+          <version>1.82</version>
         </dependency>
         <dependency>
           <groupId>org.xerial</groupId>
