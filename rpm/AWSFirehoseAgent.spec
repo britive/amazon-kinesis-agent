@@ -121,7 +121,7 @@ rm -rf %{buildroot}
 %{jar_dir}/aws-java-sdk-sts-%{aws_sdk_version}.jar
 %{jar_dir}/aws-java-sdk-ec2-%{aws_sdk_version}.jar
 %{jar_dir}/commons-cli-1.2.jar
-%{jar_dir}/commons-codec-1.6.jar
+%{jar_dir}/commons-codec-1.15.jar
 %{jar_dir}/commons-lang3-3.4.jar
 %{jar_dir}/commons-logging-adapters-1.1.jar
 %{jar_dir}/commons-logging-api-1.1.jar
@@ -151,7 +151,10 @@ rm -rf %{buildroot}
 %attr(0755,%{agent_user_name},%{agent_user_name}) %dir %{state_dir}
 
 %changelog
-* Tue Jun 21 2022 Mike Patnode <mike.patnode@britive.com> - 2.0.6-1b
+* Tue Jun 21 2022 Mike Patnode <mike.patnode@britive.com> - 2.0.6-1c
+- Bumped commons-codec to 1.15
+
+* Tue Apr 21 2022 Mike Patnode <mike.patnode@britive.com> - 2.0.6-1b
 - Bumped fasterXML to 2.13.2
 - Bumped guava to 31.1
 - Bumped jcommander to 1.82
