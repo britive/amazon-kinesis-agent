@@ -2,9 +2,16 @@ version: '2'
 
 services:
   kinesis-build:
-    image: amazoncorretto:8
+    build: .
     stdin_open: true # docker run -i
     tty: true        # docker run -t
+    command: >
+            bash -c "cd /home/builder/rpm/SPECS &&
+            rpmbuild -ba AWSFirehoseAgent.spec &&
+            cp -v /home/builder/rpm/RPMS/noarch/* /home/builder/rpm/SOURCES/aws-kinesis-agent/rpm/ &&
+            echo Pausing for debug if necessary. Press ^C to exit &&
+            sleep inf"
     volumes: 
-      - "$HOME:/home/docker"
+      - "$PWD:/home/builder/rpm/SOURCES/aws-kinesis-agent"
+      - "$PWD/rpm/AWSFirehoseAgent.spec:/home/builder/rpm/SPECS/AWSFirehoseAgent.spec"
 

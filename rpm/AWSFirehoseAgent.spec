@@ -1,6 +1,6 @@
 Name:           aws-kinesis-agent
 Version:        2.0.6
-Release:        1b%{?dist}
+Release:        1c%{?dist}
 Summary:        Amazon Kinesis Streaming Data Agent
 
 Group:          Applications/Communications
@@ -8,10 +8,9 @@ License:        Amazon Software License and Apache 2.0 and MIT
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 URL:            http://aws.amazon.com/
-Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  ant
-BuildRequires:  java-1.8.0-openjdk
+BuildRequires:  java-1.8.0-amazon-corretto-devel
 Requires:       java >= 1:1.8.0
 Provides:       bundled(Slf4j) = 1.7
 Provides:       bundled(JakartaCommons-lang3) = 3.4
@@ -42,10 +41,15 @@ aws-kinesis-agent is a software service that runs on customer hosts and continuo
 and sends new data to the Amazon Kinesis Stream service and Amazon Kinesis Firehose service in near-real-time.
 
 %prep
-%setup -n %{name}
+cd %{_topdir}/BUILD
+sudo rm -rf %{name}
+mkdir %{name}
+cp -rf %{_topdir}/SOURCES/%{name}/* %{name}
+%setup -D -T -n %{name}
 
 %build
-ant -buildfile ant_build.xml
+sudo ./setup --build
+sudo chown -R builder:builder .
 
 %install
 rm -rf %{buildroot}
@@ -64,7 +68,7 @@ install -m755 ./bin/%{daemon_name}-babysit %{buildroot}%{_bindir}
 install -m644 ./dependencies/* %{buildroot}%{jar_dir}
 rm %{buildroot}%{jar_dir}/lombok*
 install -m644 ./ant_build/lib/* %{buildroot}%{jar_dir}
-install -m644 ./configuration/beta/%{daemon_name}.json %{buildroot}%{config_dir}/agent.json
+install -m644 ./configuration/release/%{daemon_name}.json %{buildroot}%{config_dir}/agent.json
 install -m755 ./bin/%{daemon_name}.RedHat %{buildroot}%{init_dir}/%{daemon_name}
 install -m644 ./support/%{daemon_name}.cron %{buildroot}%{cron_dir}/%{daemon_name}
 install -m644 ./support/%{daemon_name}.sysconfig %{buildroot}%{sysconfig_dir}/%{daemon_name}
@@ -147,6 +151,11 @@ rm -rf %{buildroot}
 %attr(0755,%{agent_user_name},%{agent_user_name}) %dir %{state_dir}
 
 %changelog
+* Tue Jun 21 2022 Mike Patnode <mike.patnode@britive.com> - 2.0.6-1b
+- Bumped fasterXML to 2.13.2
+- Bumped guava to 31.1
+- Bumped jcommander to 1.82
+
 * Mon Jan 6 2022 Marat Khusainov <khumarat@amazon.com> - 2.0.6
 - Bumped log4 version to 2.17.1
 

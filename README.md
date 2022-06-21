@@ -1,6 +1,8 @@
 # Britive hacks
-Upgrade FasterXML, jcommander and Guava to avoid CVE scanner complaints.  Note we did not determine whether or not the vulnerabilities were exploitable,
+Upgrade various JAVA components to avoid CVE scanner complaints.  Note we did not determine whether or not the vulnerabilities were exploitable,
 but just wanted reduce the noise in our CVE scan by simply upgrading the problematic components
+
+To build the RPM run ```docker-compose up```.    The new RPM file will be copied to the rpm directory.   The container will continue running for debugging as necessary.   Press ^C to exit.
 
 # Amazon Kinesis Agent
 
