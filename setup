@@ -99,7 +99,7 @@ download_dependencies() {
   
   echo "Downloading dependencies ..."
   aws_java_sdk_version="1.11.700"
-  fasterxml_version="2.13.2"
+  fasterxml_version="2.14.2"
   
   remote_mvn_pkg="com.amazonaws:aws-java-sdk-core:${aws_java_sdk_version} \
                   com.amazonaws:aws-java-sdk-kinesis:${aws_java_sdk_version} \
@@ -108,7 +108,7 @@ download_dependencies() {
                   com.amazonaws:aws-java-sdk-ec2:${aws_java_sdk_version} \
                   com.fasterxml.jackson.core:jackson-annotations:${fasterxml_version} \
                   com.fasterxml.jackson.core:jackson-core:${fasterxml_version} \
-                  com.fasterxml.jackson.core:jackson-databind:${fasterxml_version}.2 \
+                  com.fasterxml.jackson.core:jackson-databind:${fasterxml_version} \
                   com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:${fasterxml_version} \
                   com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${fasterxml_version} \
                   com.google.code.findbugs:jsr305:3.0.1 \

@@ -1,6 +1,6 @@
 Name:           aws-kinesis-agent
 Version:        2.0.6
-Release:        1c%{?dist}
+Release:        1d%{?dist}
 Summary:        Amazon Kinesis Streaming Data Agent
 
 Group:          Applications/Communications
@@ -132,11 +132,11 @@ rm -rf %{buildroot}
 %{jar_dir}/httpcore-ab-4.4.3.jar
 %{jar_dir}/httpcore-nio-4.4.3.jar
 %{jar_dir}/httpmime-4.5.1.jar
-%{jar_dir}/jackson-annotations-2.13.2.jar
-%{jar_dir}/jackson-core-2.13.2.jar
-%{jar_dir}/jackson-databind-2.13.2.2.jar
-%{jar_dir}/jackson-dataformat-cbor-2.13.2.jar
-%{jar_dir}/jackson-dataformat-xml-2.13.2.jar
+%{jar_dir}/jackson-annotations-2.14.2.jar
+%{jar_dir}/jackson-core-2.14.2.jar
+%{jar_dir}/jackson-databind-2.14.2.jar
+%{jar_dir}/jackson-dataformat-cbor-2.14.2.jar
+%{jar_dir}/jackson-dataformat-xml-2.14.2.jar
 %{jar_dir}/jcommander-1.82.jar
 %{jar_dir}/joda-time-2.8.2.jar
 %{jar_dir}/jsr305-3.0.1.jar

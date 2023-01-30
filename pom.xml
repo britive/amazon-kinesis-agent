@@ -24,7 +24,7 @@
 
     <properties>
         <aws-java-sdk.version>1.11.700</aws-java-sdk.version>
-        <fasterxml.version>2.13.2</fasterxml.version>
+        <fasterxml.version>2.14.2</fasterxml.version>
     </properties>
 
     <dependencies>
@@ -76,7 +76,7 @@
         <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
           <artifactId>jackson-databind</artifactId>
-          <version>${fasterxml.version}.2</version>
+          <version>${fasterxml.version}</version>
         </dependency>
         <dependency>
           <groupId>com.fasterxml.jackson.dataformat</groupId>
