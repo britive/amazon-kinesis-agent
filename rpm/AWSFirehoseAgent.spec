@@ -1,6 +1,6 @@
 Name:           aws-kinesis-agent
 Version:        2.0.6
-Release:        1d%{?dist}
+Release:        1e%{?dist}
 Summary:        Amazon Kinesis Streaming Data Agent
 
 Group:          Applications/Communications
@@ -146,7 +146,7 @@ rm -rf %{buildroot}
 %{jar_dir}/log4j-slf4j-impl-2.17.1.jar
 %{jar_dir}/log4j-1.2-api-2.17.1.jar
 
-%{jar_dir}/sqlite-jdbc-3.20.1.jar
+%{jar_dir}/sqlite-jdbc-3.42.0.0.jar
 %attr(0755,%{agent_user_name},%{agent_user_name}) %dir %{log_dir}
 %attr(0755,%{agent_user_name},%{agent_user_name}) %dir %{state_dir}
 
