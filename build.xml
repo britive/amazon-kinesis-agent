@@ -26,6 +26,8 @@
         <mkdir dir="${build.private}" />
     	<property name="build.compiler" value="javac1.21" />
         <javac source="21" target="21" includeantruntime="false" classpathref="classpath" srcdir="${src.dir}" destdir="${build.private}" debug="true" />
+        <compilerarg value="--release" />
+        <compilerarg value="21" />
         <compilerarg value="--add-opens" />
         <compilerarg value="java.base/java.lang=ALL-UNNAMED" />
         <compilerarg value="--illegal-access=warn" />
