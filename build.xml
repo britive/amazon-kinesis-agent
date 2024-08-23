@@ -28,6 +28,7 @@
         <javac source="21" target="21" includeantruntime="false" classpathref="classpath" srcdir="${src.dir}" destdir="${build.private}" debug="true" />
         <compilerarg value="--add-opens" />
         <compilerarg value="java.base/java.lang=ALL-UNNAMED" />
+        <compilerarg value="--illegal-access=warn" />
         <property name="src.agent.path" value="com/amazon/kinesis/streaming/agent" />
         <copy todir="${build.private}/${src.agent.path}" failonerror="true">
             <fileset dir="${src.dir}/${src.agent.path}" excludes="**/*.java" />
