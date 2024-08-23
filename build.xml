@@ -22,7 +22,13 @@
         <mkdir dir="${build.root}" />
     </target>
 
-    <target name="compile" depends="init">
+    <target name="show-javac-version">
+        <exec executable="javac">
+            <arg value="-version" />
+        </exec>
+    </target>
+
+    <target name="compile" depends="init, show-javac-version">
         <mkdir dir="${build.private}" />
     	<property name="build.compiler" value="javac1.7" />
         <javac source="21" target="21" includeantruntime="false" classpathref="classpath" srcdir="${src.dir}" destdir="${build.private}" debug="true" />
