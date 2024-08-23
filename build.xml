@@ -18,22 +18,11 @@
         <fileset dir="${java.home}" includes="**/*.jar" />
     </path>
 
-    <target name="get-java-version">
-      <condition property="current.java.version">
-        <or>
-          <equals arg1="${ant.java.version}" arg2="1.8"/>
-        </or>
-      </condition>
-    </target>
-    <target name="check-java-version" depends="get-java-version" unless="current.java.version">
-        <fail message="Unsupported Java version: ${ant.java.version}. Make sure that the Java version is 1.8 or greater."/>
-    </target>
-    
     <target name="init">
         <mkdir dir="${build.root}" />
     </target>
 
-    <target name="compile" depends="check-java-version, init">
+    <target name="compile" depends="init">
         <mkdir dir="${build.private}" />
     	<property name="build.compiler" value="javac1.7" />
         <javac source="1.8" target="1.8" includeantruntime="false" classpathref="classpath" srcdir="${src.dir}" destdir="${build.private}" debug="true" />
