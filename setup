@@ -132,7 +132,7 @@ download_dependencies() {
                   com.beust:jcommander:1.82 \
                   org.xerial:sqlite-jdbc:3.42.0.0 \
                   joda-time:joda-time:2.8.2 \
-                  org.projectlombok:lombok:1.18.24"
+                  org.projectlombok:lombok:1.18.30"
   
   for package in ${remote_mvn_pkg}
   do
